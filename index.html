@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Para Você ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="audio-romantico" src="bensound-love.mp3"></audio>
+  <div class="coracoes-container"></div>
+   <div id="entrada" class="entrada">
+    <h1>Tenho algo pra te mostrar 💖</h1>
+    <button onclick="mostrarMensagem()">Entrar</button>
+  </div>
+  <div class="container">
+    <h1>Oi, meu amor 💌</h1>
+    <img src="11.jpg" alt="Nós dois" class="imagem-romantica">
+    <p>
+      Eu criei essa cantinha só pra te dizer o quanto você é especial pra mim.
+      Desde uns tempo para cá você fez uma grande deferença na minha vida, tudo mudou, foquei mais nos treinos, nos estudos,
+      tudo para te emprecionar.
+    </p>
+    <p>Quando eu te olho sempre fico adimirado com sua beleza RÁRA, que se eu podece ficaria o dia todo 
+      te olhando, seus olhos são como o eclipis lunar 🌙 se vé de vez enquanto mais alucina qualquer um que olha.
+    </p>
+    <p>Eu sempre te olho, sempre adimirando sua beleza, quando você me olha de novo fico sem reação 🥰
+      quando crio coragem hááá chego em você digo imediatamente o quanto você é linda e minha BB 😍😘.
+    </p>
+    <p>Sempre quis te dizer o quanto gosto de você mas eu era derrotado pela vergonha hi hi.</p>
+    <p>
+      <p>mas espero que vc seja feliz, e alembre que eu sempre gostei de você.
+      </p>
+      Espero que essa pequena declaração mostre o quanto eu penso em você, esse e meu correio elegante para você. ❤️
+    </p>
+    <div class="signature">😘😘😘, <br> Otávio</div>
+  </div>
+   <script>
+  function mostrarMensagem() {
+    document.getElementById("entrada").style.display = "none";
+    const mensagem = document.getElementById("mensagem");
+    mensagem.classList.remove("escondido");
+    mensagem.classList.add("fadeIn");
+
+    // Tocar música
+    const musica = document.getElementById("audio-romantico");
+    musica.volume = 0.3; // volume suave
+    musica.play();
+  }
+
+  // Código dos corações flutuando
+  const container = document.querySelector('.coracoes-container');
+
+  function criarCoracao() {
+    const coracao = document.createElement('div');
+    coracao.classList.add('coracao');
+
+    coracao.style.left = Math.random() * 100 + "vw";
+    coracao.style.animationDuration = (5 + Math.random() * 5) + "s";
+    coracao.style.opacity = Math.random();
+    coracao.style.transform = `rotate(45deg) scale(${0.5 + Math.random()})`;
+
+    container.appendChild(coracao);
+
+    setTimeout(() => {
+      coracao.remove();
+    }, 10000);
+  }
+
+  setInterval(criarCoracao, 500);
+</script>
+</body>
+</html>
